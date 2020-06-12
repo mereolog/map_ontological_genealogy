@@ -1,0 +1,608 @@
+@prefix : <http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix survey: <http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#> .
+@base <http://www.kul.pl/ontologies/poniatowski_survey_text_ontology> .
+
+<http://www.kul.pl/ontologies/poniatowski_survey_text_ontology> rdf:type owl:Ontology ;
+                                                                 owl:imports <http://www.w3.org/2004/02/skos/core> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_datatype_property_001
+survey:part_1_datatype_property_001 rdf:type owl:ObjectProperty ,
+                                             owl:FunctionalProperty ;
+                                    rdfs:domain survey:Class_003 ;
+                                    rdfs:range survey:directions ;
+                                    skos:prefLabel "towards"@en ,
+                                                   "w kierunku"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_object_property_001
+survey:part_1_object_property_001 rdf:type owl:ObjectProperty ;
+                                  owl:inverseOf survey:part_1_object_property_004 ;
+                                  rdf:type owl:AsymmetricProperty ;
+                                  rdfs:domain survey:Class_004 ;
+                                  rdfs:range survey:Class_004 ;
+                                  skos:prefLabel "is located in"@en ,
+                                                 "jest położony w"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_object_property_002
+survey:part_1_object_property_002 rdf:type owl:ObjectProperty ;
+                                  owl:inverseOf survey:part_1_object_property_008 ;
+                                  rdfs:domain survey:Class_001 ;
+                                  rdfs:range survey:Class_003 ;
+                                  skos:prefLabel "has (geographic feature)"@en ,
+                                                 "ma (cechę geograficzną)"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_object_property_004
+survey:part_1_object_property_004 rdf:type owl:ObjectProperty ,
+                                           owl:AsymmetricProperty ;
+                                  rdfs:domain survey:Class_004 ;
+                                  rdfs:range survey:Class_004 ;
+                                  skos:prefLabel "contains"@en ,
+                                                 "zawiera"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_object_property_005
+survey:part_1_object_property_005 rdf:type owl:ObjectProperty ;
+                                  owl:inverseOf survey:part_1_object_property_006 ;
+                                  rdfs:domain survey:Class_005 ;
+                                  rdfs:range survey:Class_001 ;
+                                  skos:prefLabel "owns"@en ,
+                                                 "posiada"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_object_property_006
+survey:part_1_object_property_006 rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                  rdfs:domain survey:Class_001 ;
+                                  rdfs:range survey:Class_005 ;
+                                  owl:propertyDisjointWith survey:part_1_object_property_011 ;
+                                  skos:prefLabel "is owned by"@en ,
+                                                 "jest własnością"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_object_property_007
+survey:part_1_object_property_007 rdf:type owl:ObjectProperty ,
+                                           owl:FunctionalProperty ,
+                                           owl:AsymmetricProperty ;
+                                  rdfs:domain survey:Class_003 ;
+                                  rdfs:range survey:Class_001 ;
+                                  skos:prefLabel "do"@pl ,
+                                                 "to"@en .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_object_property_008
+survey:part_1_object_property_008 rdf:type owl:ObjectProperty ;
+                                  rdfs:domain survey:Class_003 ;
+                                  rdfs:range survey:Class_001 ;
+                                  skos:prefLabel "from"@en ,
+                                                 "od"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_object_property_009
+survey:part_1_object_property_009 rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf survey:part_1_object_property_005 ;
+                                  skos:prefLabel "is heir to"@en ,
+                                                 "jest dziedzicem"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_object_property_010
+survey:part_1_object_property_010 rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf survey:part_1_object_property_005 ;
+                                  skos:prefLabel "is possessor of"@en ,
+                                                 "jest possessorem"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_object_property_011
+survey:part_1_object_property_011 rdf:type owl:ObjectProperty ;
+                                  rdfs:domain survey:Class_001 ;
+                                  rdfs:range survey:Class_005 ;
+                                  skos:prefLabel "była poprzednią własnością"@pl ,
+                                                 "was owned by"@en .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_4_object_property_001
+survey:part_4_object_property_001 rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                  rdfs:domain survey:Part_4_Class_001 ;
+                                  rdfs:range survey:Class_001 ;
+                                  skos:prefLabel "links"@en ,
+                                                 "łączy"@pl .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_datatype_property_002
+survey:part_1_datatype_property_002 rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                    rdf:type owl:FunctionalProperty ;
+                                    rdfs:domain survey:Class_003 ;
+                                    rdfs:range xsd:decimal ;
+                                    skos:prefLabel "measure in miles"@en ,
+                                                   "miara w milach"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_datatype_property_003
+survey:part_1_datatype_property_003 rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf survey:part_1_datatype_property_002 ;
+                                    skos:prefLabel "miara w milach wielkich"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_datatype_property_004
+survey:part_1_datatype_property_004 rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf survey:part_1_datatype_property_002 ;
+                                    skos:prefLabel "miara w milach małych"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_1_datatype_property_005
+survey:part_1_datatype_property_005 rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf survey:part_1_datatype_property_002 ;
+                                    skos:prefLabel "miara w milach miernych"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_4_datatype_property_001
+survey:part_4_datatype_property_001 rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                    rdf:type owl:FunctionalProperty ;
+                                    rdfs:domain survey:Part_4_Class_001 ;
+                                    rdfs:range xsd:positiveInteger ;
+                                    skos:prefLabel "godziny potrzebne dla pokonania drogi"@pl ,
+                                                   "hours needed to travel along"@en .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_4_datatype_property_002
+survey:part_4_datatype_property_002 rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf survey:part_4_datatype_property_001 ;
+                                    skos:prefLabel "godziny potrzebne dla pokonania drogi latem"@pl ,
+                                                   "hours needed to travel along in summer"@en .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_4_datatype_property_003
+survey:part_4_datatype_property_003 rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf survey:part_4_datatype_property_001 ;
+                                    skos:prefLabel "godziny potrzebne dla pokonania drogi zimą"@pl ,
+                                                   "hours needed to travel along in winter"@en .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#part_4_datatype_property_004
+survey:part_4_datatype_property_004 rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                    rdfs:domain survey:Part_4_Class_001 ;
+                                    rdfs:range rdfs:Literal ;
+                                    skos:prefLabel "has character"@en ,
+                                                   "ma charakter"@pl .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Class_001
+survey:Class_001 rdf:type owl:Class ;
+                 rdfs:subClassOf survey:Class_004 ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty survey:part_1_object_property_001 ;
+                                   owl:someValuesFrom survey:Class_002
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty survey:part_1_object_property_002 ;
+                                   owl:someValuesFrom survey:Class_003
+                                 ] ;
+                 skos:altLabel "mieysce"@pl ;
+                 skos:prefLabel "locality"@en ,
+                                "miejsce"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Class_002
+survey:Class_002 rdf:type owl:Class ;
+                 rdfs:subClassOf survey:Class_004 ;
+                 skos:prefLabel "administrative unit"@en ,
+                                "jednostka administracyjna"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Class_003
+survey:Class_003 rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty survey:part_1_datatype_property_001 ;
+                                   owl:someValuesFrom owl:Thing
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty survey:part_1_object_property_007 ;
+                                   owl:someValuesFrom survey:Class_001
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty survey:part_1_datatype_property_002 ;
+                                   owl:someValuesFrom xsd:decimal
+                                 ] ;
+                 rdfs:comment "This class reifies the quarternary relationship between places, distances, and directions: x is away from y in direction of z by t miles."@en ;
+                 skos:prefLabel "relative distance"@en ,
+                                "relatywna odległość"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Class_004
+survey:Class_004 rdf:type owl:Class ;
+                 skos:prefLabel "jednostka geohistoryczna"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Class_005
+survey:Class_005 rdf:type owl:Class ;
+                 skos:prefLabel "agent"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_1_Class_001
+survey:Part_1_Class_001 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_001 ;
+                        skos:altLabel "Kościół Parafialny"@pl ;
+                        skos:prefLabel "kościół parafialny"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_1_Class_002
+survey:Part_1_Class_002 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_002 ;
+                        skos:altLabel "Archy-Dyakonat"@pl ;
+                        skos:prefLabel "archidiakonat"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_1_Class_003
+survey:Part_1_Class_003 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_002 ;
+                        skos:altLabel "Dekanat"@pl ;
+                        skos:prefLabel "dekanat"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_1_Class_004
+survey:Part_1_Class_004 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_002 ;
+                        skos:altLabel "Woiewodztwo"@pl ;
+                        skos:prefLabel "województwo"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_1_Class_005
+survey:Part_1_Class_005 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_002 ;
+                        skos:altLabel ""@pl ;
+                        skos:prefLabel "ziemia"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_1_Class_006
+survey:Part_1_Class_006 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_002 ;
+                        skos:altLabel "Powiat"@pl ;
+                        skos:prefLabel "powiat"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_1_Class_007
+survey:Part_1_Class_007 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_001 ;
+                        skos:altLabel "Wioska"@pl ;
+                        skos:prefLabel "wieś"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_1_Class_009
+survey:Part_1_Class_009 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_001 ;
+                        skos:altLabel "Osada"@pl ;
+                        skos:prefLabel "osada"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_1_Class_010
+survey:Part_1_Class_010 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_005 ;
+                        owl:disjointWith survey:Part_1_Class_012 ;
+                        skos:prefLabel "człowiek"@pl ,
+                                       "person"@en .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_1_Class_011
+survey:Part_1_Class_011 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_002 ;
+                        skos:altLabel "Parafia"@pl ;
+                        skos:prefLabel "parafia"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_1_Class_012
+survey:Part_1_Class_012 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_005 ;
+                        skos:prefLabel "organizacja"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_3_Class_001
+survey:Part_3_Class_001 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Part_3_Class_004 ;
+                        skos:altLabel "Miasto Grodowe"@pl ;
+                        skos:prefLabel "miasto grodowe"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_3_Class_002
+survey:Part_3_Class_002 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Part_3_Class_004 ;
+                        skos:altLabel "Miasto Powiatowe"@pl ;
+                        skos:prefLabel "miasto powiatowe"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_3_Class_003
+survey:Part_3_Class_003 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Part_3_Class_004 ;
+                        skos:altLabel "Miasto Archi-Dyakonalne"@pl ;
+                        skos:prefLabel "miasto archidiakonalne"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_3_Class_004
+survey:Part_3_Class_004 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_001 ;
+                        skos:altLabel "Miasto"@pl ;
+                        skos:prefLabel "miasto"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#Part_4_Class_001
+survey:Part_4_Class_001 rdf:type owl:Class ;
+                        rdfs:subClassOf survey:Class_004 ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty survey:part_4_object_property_001 ;
+                                          owl:cardinality "2"^^xsd:nonNegativeInteger
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty survey:part_4_datatype_property_001 ;
+                                          owl:someValuesFrom xsd:positiveInteger
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty survey:part_4_datatype_property_004 ;
+                                          owl:someValuesFrom rdfs:Literal
+                                        ] ;
+                        skos:prefLabel "droga"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#directions
+survey:directions rdf:type owl:Class ;
+                  skos:prefLabel "directions"@en ,
+                                 "strony świata"@pl .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_001
+survey:tarchomin_part_1_individual_001 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_001 ;
+                                       survey:part_1_object_property_001 survey:tarchomin_part_1_individual_002 ,
+                                                                         survey:tarchomin_part_1_individual_003 ,
+                                                                         survey:tarchomin_part_1_individual_008 ,
+                                                                         survey:tarchomin_part_1_individual_009 ,
+                                                                         survey:tarchomin_part_1_individual_011 ,
+                                                                         survey:tarchomin_part_1_individual_012 ;
+                                       survey:part_1_object_property_002 survey:tarchomin_part_1_individual_distance_001 ,
+                                                                         survey:tarchomin_part_1_individual_distance_002 ,
+                                                                         survey:tarchomin_part_1_individual_distance_003 ;
+                                       skos:altLabel "Kościół Parafialny we Wsi Tarchominie"@pl ;
+                                       skos:prefLabel "kościół parafialny w Tarchominie"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_002
+survey:tarchomin_part_1_individual_002 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_006 ;
+                                       skos:prefLabel "Archi-Dyakonat Pułtuski"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_003
+survey:tarchomin_part_1_individual_003 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_011 ;
+                                       skos:prefLabel "Parafia Tarchomin Wieś"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_004
+survey:tarchomin_part_1_individual_004 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_010 ;
+                                       skos:altLabel "Jeymci Pani Szamocki Miecznikowey Warszawskiey"@pl ;
+                                       skos:prefLabel "jemość pani Szamocka miecznikowa warszawska"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_005
+survey:tarchomin_part_1_individual_005 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_007 ;
+                                       survey:part_1_object_property_001 survey:tarchomin_part_1_individual_003 ;
+                                       survey:part_1_object_property_006 survey:tarchomin_part_1_individual_004 ;
+                                       survey:part_1_object_property_011 survey:tarchomin_part_1_individual_006 ;
+                                       skos:prefLabel "Białołeka"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_006
+survey:tarchomin_part_1_individual_006 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_012 ;
+                                       skos:prefLabel "Jezuici"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_008
+survey:tarchomin_part_1_individual_008 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_003 ;
+                                       skos:altLabel "Dekanat Radzymiński"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_009
+survey:tarchomin_part_1_individual_009 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_004 ;
+                                       skos:altLabel "Woiewodztwo Mazowieckie"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_010
+survey:tarchomin_part_1_individual_010 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_005 ;
+                                       skos:altLabel "Ziemia Warszawska"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_011
+survey:tarchomin_part_1_individual_011 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_006 ;
+                                       skos:altLabel "Powiat Warszawski"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_012
+survey:tarchomin_part_1_individual_012 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_007 ;
+                                       survey:part_1_object_property_001 survey:tarchomin_part_1_individual_003 ;
+                                       skos:prefLabel "Tarchomin"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_013
+survey:tarchomin_part_1_individual_013 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_007 ;
+                                       survey:part_1_object_property_001 survey:tarchomin_part_1_individual_003 ;
+                                       survey:part_1_object_property_006 survey:tarchomin_part_1_individual_004 ;
+                                       survey:part_1_object_property_011 survey:tarchomin_part_1_individual_006 ;
+                                       skos:prefLabel "Brzeziny Kąty"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_014
+survey:tarchomin_part_1_individual_014 rdf:type owl:NamedIndividual ,
+                                                survey:directions ;
+                                       skos:altLabel "Północ"@pl ,
+                                                     "połnoc"@pl ;
+                                       skos:prefLabel "północ"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_015
+survey:tarchomin_part_1_individual_015 rdf:type owl:NamedIndividual ,
+                                                survey:directions ;
+                                       skos:altLabel "Południe"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_016
+survey:tarchomin_part_1_individual_016 rdf:type owl:NamedIndividual ,
+                                                survey:directions ;
+                                       skos:altLabel "Wschod"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_017
+survey:tarchomin_part_1_individual_017 rdf:type owl:NamedIndividual ,
+                                                survey:directions ;
+                                       skos:altLabel "Wschod zimowy"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_018
+survey:tarchomin_part_1_individual_018 rdf:type owl:NamedIndividual ,
+                                                survey:directions ;
+                                       skos:altLabel "Zachod"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_019
+survey:tarchomin_part_1_individual_019 rdf:type owl:NamedIndividual ,
+                                                survey:directions ;
+                                       skos:altLabel "Zachod letni"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_020
+survey:tarchomin_part_1_individual_020 rdf:type owl:NamedIndividual ,
+                                                survey:directions ;
+                                       skos:altLabel "Zachod zimowy"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_021
+survey:tarchomin_part_1_individual_021 rdf:type owl:NamedIndividual ,
+                                                survey:directions ;
+                                       skos:altLabel "między Wschodem letnim, i połnocą"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_022
+survey:tarchomin_part_1_individual_022 rdf:type owl:NamedIndividual ,
+                                                survey:directions ;
+                                       skos:altLabel "Wschod letni"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_023
+survey:tarchomin_part_1_individual_023 rdf:type owl:NamedIndividual ,
+                                                survey:Class_001 ;
+                                       survey:part_1_object_property_001 survey:tarchomin_part_1_individual_003 ;
+                                       survey:part_1_object_property_006 survey:tarchomin_part_1_individual_024 ;
+                                       skos:altLabel "Dąbrowki Grzybowskie"@pl ;
+                                       skos:prefLabel "Dąbrówki Grzybowskie"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_024
+survey:tarchomin_part_1_individual_024 rdf:type owl:NamedIndividual ,
+                                                survey:Part_1_Class_010 ;
+                                       skos:altLabel "Jmci Pana Ossolińskiego Woiewody Podlaskiego"@pl ;
+                                       skos:prefLabel "jejmość pan Ossoliński wojewoda podlaski"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_distance_001
+survey:tarchomin_part_1_individual_distance_001 rdf:type owl:NamedIndividual ,
+                                                         survey:Class_003 ;
+                                                survey:part_1_datatype_property_001 survey:tarchomin_part_1_individual_022 ;
+                                                survey:part_1_object_property_007 survey:tarchomin_part_1_individual_005 ;
+                                                survey:part_1_datatype_property_004 1.0 ;
+                                                skos:prefLabel "odległość Białołęki od kościoła parafialnego w Tarchominie"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_distance_002
+survey:tarchomin_part_1_individual_distance_002 rdf:type owl:NamedIndividual ,
+                                                         survey:Class_003 ;
+                                                survey:part_1_datatype_property_001 survey:tarchomin_part_1_individual_022 ;
+                                                survey:part_1_object_property_007 survey:tarchomin_part_1_individual_013 ;
+                                                survey:part_1_datatype_property_005 1.25 ;
+                                                skos:prefLabel "odległość Brzezin Kątów od kościoła parafialnego w Tarchominie"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_1_individual_distance_003
+survey:tarchomin_part_1_individual_distance_003 rdf:type owl:NamedIndividual ,
+                                                         survey:Class_003 ;
+                                                survey:part_1_datatype_property_001 survey:tarchomin_part_1_individual_021 ;
+                                                survey:part_1_object_property_007 survey:tarchomin_part_1_individual_023 ;
+                                                survey:part_1_datatype_property_005 0.25 ;
+                                                skos:prefLabel "odległość Dąbrówek Grzybowskich od kościoła parafialnego w Tarchominie"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_4_individual_001
+survey:tarchomin_part_4_individual_001 rdf:type owl:NamedIndividual ;
+                                       skos:prefLabel "Warszawa"@pl .
+
+
+###  http://www.kul.pl/ontologies/poniatowski_survey_text_ontology#tarchomin_part_4_individual_002
+survey:tarchomin_part_4_individual_002 rdf:type owl:NamedIndividual ;
+                                       survey:part_4_object_property_001 survey:tarchomin_part_1_individual_012 ,
+                                                                         survey:tarchomin_part_4_individual_001 ;
+                                       survey:part_4_datatype_property_004 "piaszczysta, rowna, prosta, ieden tylko zakręt dla brzegu wyrwanego od Wisły maiąca"@pl ;
+                                       skos:prefLabel "droga z Tarchomina do Warszawy"@pl .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( survey:Class_001
+                survey:Class_002
+                survey:Part_4_Class_001
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( survey:Class_003
+                survey:Class_004
+                survey:Class_005
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( survey:part_1_datatype_property_003
+                survey:part_1_datatype_property_004
+                survey:part_1_datatype_property_005
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
