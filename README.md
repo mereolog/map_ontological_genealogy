@@ -1,1 +1,2 @@
-# map_ontological_genealogy
+#Introduction
+This is a project about ontological analysis of geographical maps
